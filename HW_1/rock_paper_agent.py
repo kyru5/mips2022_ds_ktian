@@ -11,11 +11,9 @@ from kaggle_environments import make, evaluate
 #1 - paper
 #2 - scissors
 
-your_last_action = None
 counter = 0
-
+# Каждый четный ход играем "камень", каждый нечетный "бумага"
 def rock_paper(observation, configuration):
-    global your_last_action
     global counter
 
     if observation.step > 0:

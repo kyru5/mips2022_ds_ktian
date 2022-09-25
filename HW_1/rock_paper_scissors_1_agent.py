@@ -11,11 +11,11 @@ from kaggle_environments import make, evaluate
 #1 - paper
 #2 - scissors
 
-your_last_action = None
 counter = 0
 
+# Каждый 3й ход - "камень", каждый с остатком 1 после деления на 3 - "бумага",
+# в остальных случаях "ножницы"
 def rock_paper_scissors(observation, configuration):
-    global your_last_action
     global counter
 
     if observation.step > 0:

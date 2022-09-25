@@ -13,6 +13,7 @@ from kaggle_environments import make, evaluate
 
 your_last_action = None
 
+# Мой следующий ход на 1 меньше предыдущего (например, если была "бумага", то будет "камень")
 def smart_1(observation, configuration):
     global your_last_action
 

@@ -14,6 +14,8 @@ from kaggle_environments import make, evaluate
 your_last_action = None
 opponent_actions = []
 
+# Накапливаем статистику ходов оппонента.
+# Мой следующий ход на 1цу больше статистически популярного выбора оппонента.
 def stats_1(observation, configuration):
     global your_last_action
     global opponent_actions
