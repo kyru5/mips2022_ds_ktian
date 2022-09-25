@@ -7,16 +7,21 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from kaggle_environments import make, evaluate, utils
 
-# evaluate(
-#    "rps",  # environment to use - no need to change
-#    ["rock_agent.py", "copy_opponent.py"],  # agents to evaluate
-#    configuration = {"episodeSteps": 100}  # number of episodes
-#)
+#env = make("rps", debug=True)
+# env.reset()
 
-env = make("rps", debug=True)
-# env.render()
+outcomes = evaluate(
+   "rps",  # environment to use - no need to change
+   agents=["rock_agent.py", "paper_agent.py"],  # agents to evaluate
+   num_episodes=1,
+   steps=10,
+   debug=True,
+   configuration={"episodeSteps": 2}  # number of episodes
+)
 
-env.reset()
+print(outcomes)
 
-env.run(["rock_paper_scissors_2.py", "stats_3.py"])
-env.render(mode="ipython", width=700, height=550)
+#env = make("rps", debug=True)
+# env.reset()
+#l = env.run(["paper_agent.py", "scissor_agent.py"])
+#env.render(mode="ipython", width=700, height=550)

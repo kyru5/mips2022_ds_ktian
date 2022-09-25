@@ -54,7 +54,7 @@ def pattern(oa, loa):
         return loa
 
 
-def stats_2(observation, configuration):
+def stats_3(observation, configuration):
     global your_last_action
     global opponent_actions
 

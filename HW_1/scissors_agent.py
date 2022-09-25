@@ -11,5 +11,6 @@ from kaggle_environments import make, evaluate, utils
 #0 - rock
 #1 - paper
 #2 - scissors
-def rock_agent(observation, configuration):
-    return 0
+
+def scissor_agent(observation, configuration):
+    return 2

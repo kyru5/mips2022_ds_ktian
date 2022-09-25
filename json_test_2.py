@@ -10,12 +10,12 @@ import pandas as pd
 #    recipes=json.load(f)
 #df = pd.DataFrame(recipes)
 
-s = set()
+all_ingredients = set()
 
 df = pd.read_json('data/recipes.json')
 for i in df['ingredients']:
     for j in i:
-        s.add(j)
+        all_ingredients.add(j)
 
 
 def contains(ingredient_list): # Определяем имя функции и передаваемые аргументы
@@ -24,5 +24,12 @@ def contains(ingredient_list): # Определяем имя функции и �
     else: # Если ингредиента нет в текущем блюде,
         return 0 # возвращаем значение 0
 
-print(len(s))
+for ingredient_name in all_ingredients:  # Последовательно перебираем ингредиенты в реестре all_ingredients
+    df[ingredient_name] = df['ingredients'].apply(contains)
+        
+
+df['ingredients'] = df['ingredients'].apply(len)  # Заменяем список ингредиентов в рецепте на их количество
+df.to_csv('data/recipes.csv', index=False)
+# print(len(s))
+
 
